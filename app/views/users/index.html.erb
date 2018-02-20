@@ -1,0 +1,8 @@
+user用ページ
+
+<% if @user %>
+    <%= @user.email %>さん、ようこそ
+    <%#= @stylist.name %>
+    <%#= link_to 'stylist一覧', stylists_path %>
+    <%= link_to '髪を切ってもらいましょう', shares_path %>
+<% end %>

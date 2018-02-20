@@ -4,5 +4,5 @@ class Owner < ApplicationRecord
     
     has_many :agreements, dependent: :destroy
     has_many :has_stylists, through: :agreements, source: :stylist
-    
+    has_secure_password
 end

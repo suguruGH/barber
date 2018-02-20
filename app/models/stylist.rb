@@ -4,4 +4,5 @@ class Stylist < ApplicationRecord
     
     has_many :agreements, dependent: :destroy
     has_many :has_owners, through: :agreements, source: :owner
+    has_secure_password
 end

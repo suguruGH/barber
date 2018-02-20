@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StylistFavoriteTest < ActiveSupport::TestCase
+class ShareTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

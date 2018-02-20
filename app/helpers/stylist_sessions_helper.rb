@@ -1,0 +1,2 @@
+module StylistSessionsHelper
+end

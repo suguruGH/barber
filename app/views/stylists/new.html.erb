@@ -1,5 +1,17 @@
-<h1>New Stylist</h1>
+<h1>Stylist Sign up</h1>
 
-<%= render 'form', stylist: @stylist %>
+<%= form_with(model: @stylist, local: true) do |f| %>  
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-<%= link_to 'Back', stylists_path %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Create my account" %>
+<% end %>

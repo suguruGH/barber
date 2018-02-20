@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>投稿写真:</strong>
+  <%= hidden_field_tag :"cache[image]", @share.image.cache_name %>
+  <%= image_tag(@share.image) %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @share.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @share.content %>
+</p>
+
+<%= link_to 'Edit', edit_share_path(@share) %> |
+<%= link_to 'Back', shares_path %>
+
+<%# if @favorite.present? %>
+    <%#= link_to 'お気に入り解除する', favorite_path(share_id: @share.id), method: :delete, class: 'btn btn-danger' %>
+<%# else %>
+    <%#= link_to 'お気に入りする', favorites_path(share_id: @share.id), method: :post, class: 'btn btn-primary' %>
+<%# end %>

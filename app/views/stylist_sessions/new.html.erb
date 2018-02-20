@@ -1,0 +1,12 @@
+<h1>Stylist Log in </h1>
+<%= form_with(scope: :session, url: stylist_sessions_path, local: true) do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Log in" %>
+  <%= link_to 'stylist sign up', new_stylist_path %>
+<% end %>

@@ -1,0 +1,8 @@
+owner用ページ
+<% if @owner %>
+    <%= @owner.email %>さん、ようこそ!
+    
+    <%#= link_to 'stylist一覧', stylists_path %>
+    <%#= @stylist.name %>
+    <%= link_to '店を貸しますよ', shares_path %>
+<% end %>
