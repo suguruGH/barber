@@ -9,6 +9,29 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gnavi">
+        <span class="sr-only">Bootstrap</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Barberアプリ
+
+      </a>
+    </div>
+    <div id="gnavi" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to '一覧', shares_path %></li>
+        <li><%= link_to 'Log in', new_user_session_path %></li>
+        <li><%= link_to 'Log out', root_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     <%= yield %>
   </body>
 </html>

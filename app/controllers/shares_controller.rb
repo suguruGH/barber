@@ -7,6 +7,8 @@ class SharesController < ApplicationController
   def index
     # binding.pry
     @shares = Share.all
+    @q      = Share.search(params[:q])
+    @shares = @q.result(distinct: true)
   end
 
   # GET /pictures/1
