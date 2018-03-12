@@ -1,8 +1,8 @@
 class StylistsController < ApplicationController
     def index
       @stylists = Stylist.all
-      @stylist = current_stylist
-      @owner = current_owner
+      # @stylist = current_stylist
+      # @owner = current_owner
     end
   
     def new

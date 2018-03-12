@@ -1,8 +1,8 @@
 class OwnersController < ApplicationController
     def index
       @owners = Owner.all
-      @owner = current_owner
-      @stylist = current_stylist
+      # @owner = current_owner
+      # @stylist = current_stylist
     end
 
     def new

@@ -43,11 +43,13 @@ class SharesController < ApplicationController
     
     @share = Share.new(share_params)
     @share.user_id = current_user.id
-    # @share.image.retrieve_from_cache!(params[:cache][:image]) unless params[:cache][:image].blank?   ##画像のurlが空ではなければ,メッソドが動く
+    
+    # binding.pry
+    # @share.image   ##画像のurlが空ではなければ,メッソドが動く
     respond_to do |format|
       if @share.save
         # PictureMailer.picture_mail(@picture).deliver  ##追記
-        format.html { redirect_to @share, notice: 'Share was successfully created.' }
+        format.html { redirect_to @share, notice: 'Successfully created.' }
         format.json { render :show, status: :created, location: @share }
       else
         format.html { render :new }
@@ -63,7 +65,7 @@ class SharesController < ApplicationController
     respond_to do |format|
       # binding.pry
       if @share.update(share_params)
-        format.html { redirect_to @share, notice: 'Share was successfully updated.' }
+        format.html { redirect_to @share, notice: 'Successfully updated.' }
         format.json { render :show, status: :ok, location: @share }
       else
         format.html { render :edit }
@@ -77,7 +79,7 @@ class SharesController < ApplicationController
   def destroy
     @share.destroy
     respond_to do |format|
-      format.html { redirect_to shares_url, notice: 'Share was successfully destroyed.' }
+      format.html { redirect_to shares_url, notice: 'Successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -95,7 +97,7 @@ class SharesController < ApplicationController
     
     def session_login
       if session[:user_id] == nil
-        redirect_to new_session_path
+        redirect_to new_user_session_path
       end
     end
 end

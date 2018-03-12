@@ -10,6 +10,8 @@ class User < ApplicationRecord
         has_many :shares, dependent: :destroy
         has_many :favorites, dependent: :destroy
         has_many :favorite_shares, through: :favorites, source: :share
+        mount_uploader :image, ImageUploader
+
     #passwordを隠す    
         has_secure_password
         

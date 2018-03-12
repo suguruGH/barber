@@ -4,61 +4,57 @@
     <div class="col-xs-12">
 <p id="notice"><%= notice %></p>
 
-<h1>依頼ページ</h1>
+<h1>投稿ページ</h1>
 <%= search_form_for @q do |f| %>
 
   <%# start 特定の文字列で始まる商品名で検索 %>
-  <%= f.label :content_start, "場所" %>
-  <%= f.search_field :content_start %>
-<%= f.submit %>  
+  <p>Title</p>
+  <%#= f.search_field :title_start %>
+  <p>Content</p>
+  <%= f.search_field :content_or_title_cont %><br>
+
+<%= f.submit %><br>
+<%#="----------------------------------------"%>
   
 <% end %>
 
 <table>
   <thead>
-    <tr>
-      <th class="">Image</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
+    <!--<tr>-->
+    <!--  <p class="">Image</p>-->
+      <!--<p>Title</p>-->
+      <!--<p>Content</p>-->
+    <!--  <p colspan="3"></p>-->
+    <!--</tr>-->
   </thead>
   
   <tbody class='img-rounded'>
     <% @shares.each do |share| %>
-      <tr>
-        <!--<td class = "img-td">-->
-          <!--<strong>投稿写真:</strong>-->
-          <%#= image_tag(share.image) %>
-        <!--</td>-->
-        <td><%= share.title %></td>
-        <td><%= share.content %></td>
-    
-    <!--<td class = "img-td">-->
-      <!--<p>-->
-        <!--<strong>顔:</strong>-->
-        <%# if share.image != nil %>
-          <%#= image_tag (share.user.image) %>
-          <%#= hidden_field_tag :"cache[image]",@share.image.cache_name %>
-        <%# else %>
-          <!--<p>no image</p>-->
-        <%# end %>
-      <!--</p>-->
-    <!--</td>-->
+      <div>
+        <p><%= share.title %></p>
+        <p><%= share.content %></p>
+        <p><%= image_tag share.image %></p>
+        
         <% if current_user.id == share.user_id %>
-          <td><%= link_to 'Show', share, class: 'btn btn-default' %></td>
-          <td><%= link_to 'Edit', edit_share_path(share), class: 'btn btn-info' %></td>
-          <td><%= link_to 'Destroy', share, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+          <p><%= link_to 'Show', share, class: 'btn btn-default' %></p><br>
+          <p><%= link_to 'Edit', edit_share_path(share), class: 'btn btn-info' %></p>
+          <p><%= link_to 'Destroy', share, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></p>
+
         <% else %>
-          <td><%= link_to 'Show', share, class: 'btn btn-default' %></td>
+          <p><%= link_to 'Show', share, class: 'btn btn-default' %></p>
+          <br>
         <% end %>
+      </div>
+      <%="-----------------------------------------"%>
     <% end %>
+    
+    
   </tbody>
 </table>
 
 <br>
 
-<%= link_to '髪を切ってもらう', new_share_path, class: 'btn btn-info' %>
+<%= link_to '投稿する', new_share_path, class: 'btn btn-info' %>
     </div>
   </div>
 </div>
