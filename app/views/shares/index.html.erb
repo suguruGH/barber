@@ -8,13 +8,13 @@
 <%= search_form_for @q do |f| %>
 
   <%# start 特定の文字列で始まる商品名で検索 %>
-  <p>Title</p>
+  <p>TitleまたはContentを検索</p>
   <%#= f.search_field :title_start %>
-  <p>Content</p>
+  <!--<p>Content</p>-->
   <%= f.search_field :content_or_title_cont %><br>
 
 <%= f.submit %><br>
-<%#="----------------------------------------"%>
+<%="================================================="%>
   
 <% end %>
 

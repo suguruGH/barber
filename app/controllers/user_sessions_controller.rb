@@ -20,7 +20,6 @@ class UserSessionsController < ApplicationController
   end
   
   def destroy
-    # binding.pry
     session.delete(:user_id)
     flash[:notice] = 'ログアウトしました'
     redirect_to root_path

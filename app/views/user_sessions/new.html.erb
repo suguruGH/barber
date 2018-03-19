@@ -5,10 +5,9 @@
   <%= f.email_field :email %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br>
 
-  <%= f.submit "Log in" %>
-  <%# binding.pry %>
+  <%= f.submit "Log in" %><br>
   <%= link_to 'user sign up', new_user_path %>
 <% end %>
 <%#= link_to 'stylistはコチラ', new_stylist_session_path %>
