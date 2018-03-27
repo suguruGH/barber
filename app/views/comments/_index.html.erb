@@ -1,0 +1,13 @@
+<ul>
+  
+  <% comments.each do |comment| %>
+  
+    <% unless comment.id.nil? %>
+      <ul class="chat">
+        <p><%= comment.user.name %>さんの投稿です</p>
+        <p><%= comment.content %></p>
+      </ul>
+
+    <% end %>
+  <% end %>
+</ul>

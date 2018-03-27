@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'stylists/sessions'
 
   root 'tops#index'
@@ -7,7 +8,9 @@ Rails.application.routes.draw do
   resources :users
   resources :stylists
   resources :owners
-  resources :shares
+  resources :shares do
+    resources :comments
+  end
   
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :stylist_sessions, only: [:new, :create, :destroy]

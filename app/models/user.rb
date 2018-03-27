@@ -9,6 +9,7 @@ class User < ApplicationRecord
         has_many :has_owners, through: :owner_favorites, source: :owner 
         has_many :shares, dependent: :destroy
         has_many :favorites, dependent: :destroy
+        has_many :comments, dependent: :destroy
         has_many :favorite_shares, through: :favorites, source: :share
         mount_uploader :image, ImageUploader
 

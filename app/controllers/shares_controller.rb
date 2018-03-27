@@ -14,12 +14,15 @@ class SharesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @comment = @share.comments.build
+    @comments = @share.comments
     # @favorite = current_user.favorites.find_by(share_id: @share.id)
   end
 
   # GET /pictures/new
   def new
      @share = Share.new
+     @comment = Comment.new
     if params[:back]
       @share = Share.new(share_params)
     else
